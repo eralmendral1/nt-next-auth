@@ -6,7 +6,9 @@ import { redirect } from 'next/navigation'
 const ServerPage = async () => {
     const session = await getServerSession(authOptions)
 
-    if (!session) return redirect('/signin?callbackUrl=/protected/server')
+
+    // removed, use middleware
+    // if (!session) return redirect('/signin?callbackUrl=/protected/server')
 
     return (
         <Suspense fallback={<h1>Loading</h1>}>
